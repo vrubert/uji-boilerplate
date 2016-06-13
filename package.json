@@ -1,0 +1,21 @@
+{
+  "name": "@vrubert/uji-boilerplate",
+  "version": "1.0.0",
+  "description": "UJI Bootstrap project Java + Javascript ExtJS",
+  "main": "bootstrap.js",
+  "scripts": {
+    "start": "babel-node bootstrap.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "repository": {
+    "git": "https://github.com/vrubert/uji-boilerplate.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
+    "commander": "^2.9.0",
+    "dot": "^1.0.3"
+  }
+}
