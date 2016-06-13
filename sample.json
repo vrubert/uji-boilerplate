@@ -1,5 +1,6 @@
 {
-  "name": "Hospital",
+  "appPrefix" : "pho",
+  "modelName": "Hospital",
   "properties": {
     "id": "number",
     "nombre": "string"
