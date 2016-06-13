@@ -1,0 +1,7 @@
+{
+  "name": "Hospital",
+  "properties": {
+    "id": "number",
+    "nombre": "string"
+  }
+}
