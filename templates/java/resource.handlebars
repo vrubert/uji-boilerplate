@@ -29,7 +29,7 @@ public class {{modelName}}Resource extends CoreBaseService
     }
 
     @PUT
-    @Path("{{{instanceName}}Id}")
+    @Path("\{{{instanceName}}Id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public UIEntity update{{modelName}}(@PathParam("{{instanceName}}Id") Long {{instanceName}}Id, UIEntity entity)
@@ -42,7 +42,7 @@ public class {{modelName}}Resource extends CoreBaseService
     }
 
     @DELETE
-    @Path("{{{instanceName}}Id}")
+    @Path("\{{{instanceName}}Id}")
     public Response delete{{modelName}}(@PathParam("{{instanceName}}Id") Long {{instanceName}}Id, UIEntity entity)
     {
         Long connectedUserId = AccessManager.getConnectedUserId(request);

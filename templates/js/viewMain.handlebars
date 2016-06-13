@@ -1,0 +1,19 @@
+Ext.define('{{applicationName}}.view.{{instanceName}}.Main',
+{
+    extend : 'Ext.panel.Panel',
+
+    alias : 'widget.{{instanceName}}Main',
+    controller : '{{instanceName}}MainController',
+    viewModel :
+    {
+        type : '{{instanceName}}MainModel'
+    },
+
+    title : 'Gestió: {{modelName}}',
+    requires : [ '{{applicationName}}.view.{{instanceName}}.Grid' ],
+
+    items : [
+    {
+        xtype : '{{instanceName}}Grid'
+    } ]
+});

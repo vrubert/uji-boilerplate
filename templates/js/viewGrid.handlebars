@@ -1,0 +1,45 @@
+Ext.define('pho.view.{{instanceName}}.Grid',
+{
+    extend : 'Ext.ux.uji.grid.Panel',
+
+    alias : 'widget.{{instanceName}}Grid',
+    requires : [ 'pho.view.{{instanceName}}.GridModel', 'pho.store.{{modelName}}' ],
+
+    store :
+    {
+        type : '{{instanceName}}'
+    },
+
+    title : '{{modelName}}',
+
+    columns : [
+    {
+        text : 'ID',
+        dataIndex : 'id',
+        hidden : true
+    },
+    {
+        text : 'Código',
+        dataIndex : 'codigo',
+        editor :
+        {
+            field :
+            {
+                allowBlank : false
+            }
+        }
+    },
+    {
+        text : 'Nombre',
+        dataIndex : 'nombre',
+        flex : 1,
+        editor :
+        {
+            field :
+            {
+                allowBlank : false
+            }
+        }
+    } ]
+});
+

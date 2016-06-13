@@ -1,3 +1,16 @@
 {
-  "templates": "templates"
+  "templatesDir": "templates",
+  "templatesMap": {
+    "java": {
+      "dao.handlebars": "java/es/uji/apps/{{applicationName}}/dao/{{modelName}}DAO.java",
+      "service.handlebars": "java/es/uji/apps/{{applicationName}}/services/{{modelName}}Service.java",
+      "resource.handlebars": "java/es/uji/apps/{{applicationName}}/services/rest/{{modelName}}Resource.java"
+    },
+    "js": {
+      "model.handlebars": "webapp/app/model/{{modelName}}.js",
+      "store.handlebars": "webapp/app/store/{{modelName}}.js",
+      "viewMain.handlebars": "webapp/app/view/{{instanceName}}/Main.js",
+      "viewGrid.handlebars": "webapp/app/view/{{instanceName}}/Grid.js"
+    }
+  }
 }

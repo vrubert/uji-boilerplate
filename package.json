@@ -18,6 +18,7 @@
     "commander": "^2.9.0",
     "config": "^1.21.0",
     "handlebars": "^4.0.5",
+    "mkdirp": "^0.5.1",
     "standard": "^7.1.2"
   }
 }

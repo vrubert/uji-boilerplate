@@ -1,0 +1,3 @@
+Example:
+
+ $ npm start -- --out-dir=/tmp/out generate sample.json
