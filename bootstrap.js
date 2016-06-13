@@ -1,5 +1,8 @@
 import argparse from './lib/argparse'
+import generate from './lib/generate'
 
 const args = argparse.getArgs(process.argv)
 
-console.log(args)
+if (args.action === 'generate') {
+  generate.execute(args.outdir)
+}
