@@ -1,0 +1,40 @@
+package es.uji.apps.{{applicationName}}.services;
+
+import es.uji.apps.{{applicationName}}.dao.{{modelName}}DAO;
+import es.uji.apps.{{applicationName}}.models.{{modelName}};
+import es.uji.commons.rest.Role;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class {{modelName}}Service
+{
+    @Autowired
+    private {{modelName}}DAO {{instanceName}}DAO;
+
+    @Role("ADMIN")
+    public List<{{modelName}}> get{{modelName}}es(Long connectedUserId)
+    {
+        return {{instanceName}}DAO.get{{modelName}}es();
+    }
+
+    @Role("ADMIN")
+    public {{modelName}} update{{modelName}}({{modelName}} {{instanceName}}, Long connectedUserId)
+    {
+        return {{instanceName}}DAO.update({{instanceName}});
+    }
+
+    @Role("ADMIN")
+    public void delete{{modelName}}(Long {{instanceName}}Id, Long connectedUserId)
+    {
+        {{instanceName}}DAO.delete({{modelName}}.class, {{instanceName}}Id);
+    }
+
+    @Role("ADMIN")
+    public {{modelName}} insert{{modelName}}({{modelName}} {{instanceName}}, Long connectedUserId)
+    {
+        return {{instanceName}}DAO.insert({{instanceName}});
+    }
+}
