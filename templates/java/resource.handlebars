@@ -1,0 +1,61 @@
+package es.uji.apps.{{appplicationName}}.services.rest;
+
+import com.sun.jersey.api.core.InjectParam;
+import es.uji.apps.{{appplicationName}}.models.{{modelName}};
+import es.uji.apps.{{appplicationName}}.services.{{modelName}}Service;
+import es.uji.commons.rest.CoreBaseService;
+import es.uji.commons.rest.UIEntity;
+import es.uji.commons.sso.AccessManager;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.util.List;
+
+@Path("{{instanceName}}")
+public class {{modelName}}Resource extends CoreBaseService
+{
+    @InjectParam
+    private {{modelName}}Service {{instanceName}}Service;
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<UIEntity> get{{modelName}}s()
+    {
+        Long connectedUserId = AccessManager.getConnectedUserId(request);
+        List<{{modelName}}> lista{{modelName}}es = {{instanceName}}Service.get{{modelName}}es(connectedUserId);
+        return UIEntity.toUI(lista{{modelName}}es);
+    }
+
+    @PUT
+    @Path("{{{instanceName}}Id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public UIEntity update{{modelName}}(@PathParam("{{instanceName}}Id") Long {{instanceName}}Id, UIEntity entity)
+    {
+        Long connectedUserId = AccessManager.getConnectedUserId(request);
+        {{modelName}} {{instanceName}} = entity.toModel({{modelName}}.class);
+        {{instanceName}}.setId({{instanceName}}Id);
+        {{instanceName}}Service.update{{modelName}}({{instanceName}}, connectedUserId);
+        return UIEntity.toUI({{instanceName}});
+    }
+
+    @DELETE
+    @Path("{{{instanceName}}Id}")
+    public Response delete{{modelName}}(@PathParam("{{instanceName}}Id") Long {{instanceName}}Id, UIEntity entity)
+    {
+        Long connectedUserId = AccessManager.getConnectedUserId(request);
+        {{instanceName}}Service.delete{{modelName}}({{instanceName}}Id, connectedUserId);
+        return Response.ok().build();
+    }
+
+    @POST
+    public UIEntity insert{{modelName}}(UIEntity entity)
+    {
+        Long connectedUserId = AccessManager.getConnectedUserId(request);
+        {{modelName}} {{instanceName}} = entity.toModel({{modelName}}.class);
+        {{instanceName}}Service.insert{{modelName}}({{instanceName}}, connectedUserId);
+        return UIEntity.toUI({{instanceName}});
+    }
+}

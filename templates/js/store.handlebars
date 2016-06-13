@@ -1,0 +1,22 @@
+Ext.define('{{applicationName}}.store.{{modelName}}',
+{
+    extend : 'Ext.data.Store',
+    alias : 'store.{{instanceName}}',
+    model : '{{applicationName}}.model.{{modelName}}',
+
+    proxy :
+    {
+        type : 'rest',
+        url : '/{{applicationName}}/rest/{{instanceName}}',
+        reader :
+        {
+            type : 'json',
+            rootProperty : 'data'
+        },
+        writer :
+        {
+            type : 'json',
+            writeAllFields : true
+        }
+    }
+});
