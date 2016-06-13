@@ -1,8 +1,8 @@
-package es.uji.apps.{{appplicationName}}.services.rest;
+package es.uji.apps.{{applicationName}}.services.rest;
 
 import com.sun.jersey.api.core.InjectParam;
-import es.uji.apps.{{appplicationName}}.models.{{modelName}};
-import es.uji.apps.{{appplicationName}}.services.{{modelName}}Service;
+import es.uji.apps.{{applicationName}}.models.{{modelName}};
+import es.uji.apps.{{applicationName}}.services.{{modelName}}Service;
 import es.uji.commons.rest.CoreBaseService;
 import es.uji.commons.rest.UIEntity;
 import es.uji.commons.sso.AccessManager;
@@ -29,7 +29,7 @@ public class {{modelName}}Resource extends CoreBaseService
     }
 
     @PUT
-    @Path("\{{{instanceName}}Id}")
+    @Path("{{#javaPath}}{{instanceName}}{{/javaPath}}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public UIEntity update{{modelName}}(@PathParam("{{instanceName}}Id") Long {{instanceName}}Id, UIEntity entity)

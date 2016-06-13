@@ -1,8 +1,8 @@
 {
   "appPrefix" : "pho",
   "models" : [ {
-    "modelName": "Hospital",
-    "instanceName": "hospital",
+    "modelName": "Bloque",
+    "instanceName": "bloque",
     "properties": {
       "id": "number",
       "nombre": "string"
