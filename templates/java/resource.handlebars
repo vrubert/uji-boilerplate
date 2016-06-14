@@ -42,7 +42,7 @@ public class {{modelName}}Resource extends CoreBaseService
     }
 
     @DELETE
-    @Path("\{{{instanceName}}Id}")
+    @Path("{{#javaPath}}{{instanceName}}{{/javaPath}}")
     public Response delete{{modelName}}(@PathParam("{{instanceName}}Id") Long {{instanceName}}Id, UIEntity entity)
     {
         Long connectedUserId = AccessManager.getConnectedUserId(request);
