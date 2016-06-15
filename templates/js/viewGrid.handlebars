@@ -18,28 +18,21 @@ Ext.define('pho.view.{{instanceName}}.Grid',
         dataIndex : 'id',
         hidden : true
     },
+    {{#each properties}}
     {
-        text : 'Código',
-        dataIndex : 'codigo',
+        dataIndex : '{{this.name}}',
+        text: '{{this.text}}',
+        {{#if this.editable}}
         editor :
         {
             field :
             {
-                allowBlank : false
+              allowBlank : {{#if this.required}}false{{else}}true{{/if}}
             }
-        }
+        }        
+        {{/if}}
     },
-    {
-        text : 'Nombre',
-        dataIndex : 'nombre',
-        flex : 1,
-        editor :
-        {
-            field :
-            {
-                allowBlank : false
-            }
-        }
-    } ]
+    {{/each}}
+  ]
 });
 

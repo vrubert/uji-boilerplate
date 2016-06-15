@@ -3,13 +3,17 @@ Ext.define('{{applicationName}}.model.{{modelName}}',
     extend : 'Ext.data.Model',
 
     fields : [
-    {
-        name : 'id',
-        type : 'number',
-        persist : false
-    },
-    {
-        name : 'nombre',
-        type : 'string'
-    } ]
+      {
+          name : 'id',
+          type : 'number',
+          persist : false
+      },
+      {{#each properties}}
+      {
+          name : '{{this.name}}',
+          type : '{{this.type}}',
+          allowBlank : {{#if this.required}}false{{else}}true{{/if}}
+      },
+      {{/each}}
+    ]
 });

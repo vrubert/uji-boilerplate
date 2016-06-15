@@ -3,9 +3,35 @@
   "models" : [ {
     "modelName": "Bloque",
     "instanceName": "bloque",
-    "properties": {
-      "id": "number",
-      "nombre": "string"
-    }    
+    "properties": [
+      {
+        "name": "nombre",
+        "type": "string",
+        "text": "Nombre",
+        "required": true,
+        "editable": true
+      },
+      {
+        "name": "numeroObligatorias",
+        "type": "number",
+        "text": "Número obligatòries",
+        "required": true,
+        "editable": true        
+      },
+      {
+        "name": "numeroOptativas",
+        "type": "number",
+        "text": "Número optatives",
+        "required": true,
+        "editable": true        
+      },
+      {
+        "name": "asignaturaId",
+        "type": "number",
+        "text": "Asignatura",
+        "required": true,
+        "editable": true
+      }
+    ]
   }]
 }
