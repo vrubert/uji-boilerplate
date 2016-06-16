@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
-@Path("{{instanceName}}")
+@Path("{{#pluralize}}{{instanceName}}{{/pluralize}}")
 public class {{modelName}}Resource extends CoreBaseService
 {
     @InjectParam
@@ -21,11 +21,11 @@ public class {{modelName}}Resource extends CoreBaseService
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public List<UIEntity> get{{modelName}}s()
+    public List<UIEntity> get{{#pluralize}}{{modelName}}{{/pluralize}}()
     {
         Long connectedUserId = AccessManager.getConnectedUserId(request);
-        List<{{modelName}}> lista{{modelName}}s = {{instanceName}}Service.get{{modelName}}s(connectedUserId);
-        return UIEntity.toUI(lista{{modelName}}s);
+        List<{{modelName}}> lista{{#pluralize}}{{modelName}}{{/pluralize}} = {{instanceName}}Service.get{{#pluralize}}{{modelName}}{{/pluralize}}(connectedUserId);
+        return UIEntity.toUI(lista{{#pluralize}}{{modelName}}{{/pluralize}});
     }
 
     @PUT

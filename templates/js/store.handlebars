@@ -1,4 +1,4 @@
-Ext.define('{{applicationName}}.store.{{modelName}}',
+Ext.define('{{applicationName}}.store.{{#pluralize}}{{modelName}}{{/pluralize}}',
 {
     extend : 'Ext.data.Store',
     alias : 'store.{{instanceName}}',
@@ -7,7 +7,7 @@ Ext.define('{{applicationName}}.store.{{modelName}}',
     proxy :
     {
         type : 'rest',
-        url : '/{{applicationName}}/rest/{{instanceName}}',
+        url : '/{{applicationName}}/rest/{{#pluralize}}{{instanceName}}{{/pluralize}}',
         reader :
         {
             type : 'json',

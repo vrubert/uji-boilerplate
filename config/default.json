@@ -8,7 +8,7 @@
     },
     "js": {
       "model.handlebars": "webapp/app/model/{{modelName}}.js",
-      "store.handlebars": "webapp/app/store/{{modelName}}.js",
+      "store.handlebars": "webapp/app/store/{{#pluralize}}{{modelName}}{{/pluralize}}.js",
       "viewMain.handlebars": "webapp/app/view/{{instanceName}}/Main.js",
       "viewGrid.handlebars": "webapp/app/view/{{instanceName}}/Grid.js"
     }
