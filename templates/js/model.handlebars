@@ -12,7 +12,7 @@ Ext.define('{{applicationName}}.model.{{modelName}}',
     {
         name : '{{this.name}}',
         type : '{{this.type}}',
-        allowBlank : {{#if this.required}}false{{else}}true{{/if}}
+        useNull : {{#if this.required}}false{{else}}true{{/if}}
     },
     {{/each}}
     ]
