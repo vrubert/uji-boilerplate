@@ -33,5 +33,60 @@
         "editable": true
       }
     ]
+  },
+  {
+    "modelName": "Asignatura",
+    "instanceName": "asignatura",
+    "properties": [
+      {
+        "name": "codigoAsignatura",
+        "type": "string",
+        "text": "Codigo",
+        "required": true,
+        "editable": true
+      },
+      {
+        "name": "nombre",
+        "type": "string",
+        "text": "Nombre",
+        "required": true,
+        "editable": true
+      },
+      {
+        "name": "curso",
+        "type": "number",
+        "text": "Curso",
+        "required": true,
+        "editable": true        
+      },
+      {
+        "name": "semestre",
+        "type": "string",
+        "text": "Semestre",
+        "required": true,
+        "editable": true        
+      },
+      {
+        "name": "orden",
+        "type": "number",
+        "text": "Orden",
+        "required": true,
+        "editable": true
+      },
+      {
+        "name": "estudioId",
+        "type": "number",
+        "text": "Estudio Id",
+        "required": true,
+        "editable": true
+      },
+      {
+        "name": "estudioNombre",
+        "type": "string",
+        "text": "Estudio",
+        "required": true,
+        "editable": true
+      }
+    ]
   }]
 }
