@@ -24,8 +24,8 @@ public class {{modelName}}Resource extends CoreBaseService
     public List<UIEntity> get{{modelName}}s()
     {
         Long connectedUserId = AccessManager.getConnectedUserId(request);
-        List<{{modelName}}> lista{{modelName}}es = {{instanceName}}Service.get{{modelName}}es(connectedUserId);
-        return UIEntity.toUI(lista{{modelName}}es);
+        List<{{modelName}}> lista{{modelName}}s = {{instanceName}}Service.get{{modelName}}s(connectedUserId);
+        return UIEntity.toUI(lista{{modelName}}s);
     }
 
     @PUT
