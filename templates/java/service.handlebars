@@ -17,7 +17,7 @@ public class {{modelName}}Service
     @Role("ADMIN")
     public List<{{modelName}}> get{{modelName}}s(Long connectedUserId)
     {
-        return {{instanceName}}DAO.get{{modelName}}s();
+        return {{instanceName}}DAO.get({{modelName}}.class);
     }
 
     @Role("ADMIN")
