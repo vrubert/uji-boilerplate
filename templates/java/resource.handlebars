@@ -28,6 +28,15 @@ public class {{modelName}}Resource extends CoreBaseService
         return UIEntity.toUI(lista{{#pluralize}}{{modelName}}{{/pluralize}});
     }
 
+    @POST
+    public UIEntity insert{{modelName}}(UIEntity entity)
+    {
+        Long connectedUserId = AccessManager.getConnectedUserId(request);
+        {{modelName}} {{instanceName}} = entity.toModel({{modelName}}.class);
+        {{instanceName}}Service.insert{{modelName}}({{instanceName}}, connectedUserId);
+        return UIEntity.toUI({{instanceName}});
+    }
+
     @PUT
     @Path("{{#javaPath}}{{instanceName}}{{/javaPath}}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -36,7 +45,6 @@ public class {{modelName}}Resource extends CoreBaseService
     {
         Long connectedUserId = AccessManager.getConnectedUserId(request);
         {{modelName}} {{instanceName}} = entity.toModel({{modelName}}.class);
-        {{instanceName}}.setId({{instanceName}}Id);
         {{instanceName}}Service.update{{modelName}}({{instanceName}}, connectedUserId);
         return UIEntity.toUI({{instanceName}});
     }
@@ -48,14 +56,5 @@ public class {{modelName}}Resource extends CoreBaseService
         Long connectedUserId = AccessManager.getConnectedUserId(request);
         {{instanceName}}Service.delete{{modelName}}({{instanceName}}Id, connectedUserId);
         return Response.ok().build();
-    }
-
-    @POST
-    public UIEntity insert{{modelName}}(UIEntity entity)
-    {
-        Long connectedUserId = AccessManager.getConnectedUserId(request);
-        {{modelName}} {{instanceName}} = entity.toModel({{modelName}}.class);
-        {{instanceName}}Service.insert{{modelName}}({{instanceName}}, connectedUserId);
-        return UIEntity.toUI({{instanceName}});
     }
 }

@@ -1,12 +1,11 @@
 Ext.define('{{applicationName}}.model.{{modelName}}',
 {
-    extend : 'Ext.data.Model',
+    extend : 'Ext.ux.uji.data.Model',
 
     fields : [
     {
         name : 'id',
-        type : 'number',
-        persist : false
+        type : 'number'
     },
     {{#each properties}}
     {
