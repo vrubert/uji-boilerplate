@@ -14,7 +14,6 @@ public class {{modelName}}Service extends BaseService<{{modelName}}>
     @Autowired
     public {{modelName}}Service({{modelName}}DAO dao)
     {
-        this.dao = dao;
-        this.modelClass = {{modelName}}.class;
+        super(dao, {{modelName}}.class);
     }
 }
