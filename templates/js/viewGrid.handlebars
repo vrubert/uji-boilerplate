@@ -1,14 +1,14 @@
-Ext.define('pho.view.{{instanceName}}.Grid',
+Ext.define('{{applicationName}}.view.{{instanceName}}.Grid',
 {
     extend : 'Ext.ux.uji.grid.Panel',
 
     alias : 'widget.{{instanceName}}Grid',
-    requires : [ 'pho.store.{{#pluralize}}{{modelName}}{{/pluralize}}' ],
 
-    store :
+    store : Ext.create('Ext.ux.uji.data.Store',
     {
-        type : '{{#pluralize}}{{instanceName}}{{/pluralize}}'
-    },
+        model : '{{applicationName}}.model.{{modelName}}',
+        url : '/{{applicationName}}/rest/{{#pluralize}}{{instanceName}}{{/pluralize}}'
+    }),
 
     title : '{{modelName}}',
 
