@@ -24,7 +24,7 @@ public class {{modelName}}Resource extends CoreBaseService
     public List<UIEntity> get{{#pluralize}}{{modelName}}{{/pluralize}}()
     {
         Long connectedUserId = AccessManager.getConnectedUserId(request);
-        List<{{modelName}}> lista{{#pluralize}}{{modelName}}{{/pluralize}} = {{instanceName}}Service.get{{#pluralize}}{{modelName}}{{/pluralize}}(connectedUserId);
+        List<{{modelName}}> lista{{#pluralize}}{{modelName}}{{/pluralize}} = {{instanceName}}Service.getAll(connectedUserId);
         return UIEntity.toUI(lista{{#pluralize}}{{modelName}}{{/pluralize}});
     }
 
@@ -33,7 +33,7 @@ public class {{modelName}}Resource extends CoreBaseService
     {
         Long connectedUserId = AccessManager.getConnectedUserId(request);
         {{modelName}} {{instanceName}} = entity.toModel({{modelName}}.class);
-        {{instanceName}}Service.insert{{modelName}}({{instanceName}}, connectedUserId);
+        {{instanceName}}Service.insert({{instanceName}}, connectedUserId);
         return UIEntity.toUI({{instanceName}});
     }
 
@@ -45,7 +45,7 @@ public class {{modelName}}Resource extends CoreBaseService
     {
         Long connectedUserId = AccessManager.getConnectedUserId(request);
         {{modelName}} {{instanceName}} = entity.toModel({{modelName}}.class);
-        {{instanceName}}Service.update{{modelName}}({{instanceName}}, connectedUserId);
+        {{instanceName}}Service.update({{instanceName}}, connectedUserId);
         return UIEntity.toUI({{instanceName}});
     }
 
@@ -54,7 +54,7 @@ public class {{modelName}}Resource extends CoreBaseService
     public Response delete{{modelName}}(@PathParam("{{instanceName}}Id") Long {{instanceName}}Id, UIEntity entity)
     {
         Long connectedUserId = AccessManager.getConnectedUserId(request);
-        {{instanceName}}Service.delete{{modelName}}({{instanceName}}Id, connectedUserId);
+        {{instanceName}}Service.delete({{instanceName}}Id, connectedUserId);
         return Response.ok().build();
     }
 }
