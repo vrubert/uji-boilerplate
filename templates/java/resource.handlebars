@@ -19,7 +19,6 @@ public class {{modelName}}Resource extends CoreBaseService
     private {{modelName}}Service {{instanceName}}Service;
 
     @GET
-    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public List<UIEntity> get{{#pluralize}}{{modelName}}{{/pluralize}}()
     {
@@ -29,6 +28,8 @@ public class {{modelName}}Resource extends CoreBaseService
     }
 
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public UIEntity insert{{modelName}}(UIEntity entity)
     {
         Long connectedUserId = AccessManager.getConnectedUserId(request);
